@@ -1,4 +1,5 @@
 const path = require("path");
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -33,6 +34,7 @@ app.post("/api/todo", (req, res) => {
   return res.send("success");
 });
 
-app.listen(4000, () => {
+
+app.listen(process.env.PORT || 4000, () => {
   console.log("server start!");
 });
